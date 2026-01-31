@@ -55,6 +55,7 @@
           tex
           pythonEnv
           pkgs.texlab
+          pkgs.tex-fmt
           pkgs.gnumake
           pkgs.which
           pkgs.ghostscript
