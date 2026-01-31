@@ -48,3 +48,5 @@ help            Show this help menu
 hot-reload      Live-reload as you type
 pdf             Compile the PDF (default)
 ```
+
+*Note: `hot-reload` recompiles `.build/thesis.pdf`, not `thesis.pdf` - the latter is effect of `pdf` command moving the file after compilation*
