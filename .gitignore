@@ -1,0 +1,13 @@
+# VsCode
+.vscode/
+
+# Nix/Direnv
+.direnv/
+.envrc.cache
+
+# Minted cache
+_minted/
+
+# Build artifacts
+.build/
+*.pdf

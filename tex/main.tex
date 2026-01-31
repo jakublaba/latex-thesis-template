@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- Language & Encoding ---
+% English is first, Polish is second (last is active)
+\usepackage[english,polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage{csquotes}
+
+% --- Layout & Graphics ---
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\graphicspath{{../images/}}
+
+% --- Math & Fonts ---
+\usepackage{amsmath, amsfonts, amssymb}
+
+% --- Bibliography ---
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+% --- Code Highlighting (Minted) ---
+\usepackage[chapter]{minted}
+\usemintedstyle{colorful}
+\setminted{
+    breaklines, 
+    frame=lines, 
+    framesep=2mm, 
+    baselinestretch=1.2, 
+    fontsize=\footnotesize
+}
+
+% Minted requires manual translations
+\renewcommand{\listingscaption}{Listing}
+\renewcommand{\listoflistingscaption}{Spis listingów}
+
+% --- Captions ---
+\usepackage{caption}
+\captionsetup{
+    labelfont=bf, 
+    textfont=it, 
+    font=small, 
+    labelsep=period
+}
+
+% --- Interactivity (Load last) ---
+\usepackage[hidelinks, pdfusetitle]{hyperref}
+% Forces links to jump to the top of images instead of the caption below
+\usepackage[all]{hypcap}
+
+% --- Document Content ---
+\begin{document}
+
+% 1. Front Matter
+\input{titlepage}
+
+\cleardoublepage
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures
+\cleardoublepage
+
+\listoftables
+\cleardoublepage
+
+\listoflistings
+\cleardoublepage
+
+% 2. Main Matter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{chapters/intro}
+
+% 3. Back Matter
+\printbibliography[heading=bibintoc]
+
+\end{document}
